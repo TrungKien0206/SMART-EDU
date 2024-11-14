@@ -1,0 +1,738 @@
+/* General Style */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f3f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(to right, #0066cc, #00aaff);
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.header-content span {
+  color: #ffcc33;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #004080;
+}
+
+button {
+  background-color: #ffcc33;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ffb700;
+}
+
+.content-section {
+  padding: 30px;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.content-section.hidden {
+  display: none;
+}
+
+.content-section h2 {
+  color: #0066cc;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.content-section p {
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.tutor-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.tutor-list div {
+  background-color: #f9fbfd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.tutor-list div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Chatbot style override */
+#chatbot-script {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px;
+  }
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .content-section {
+    padding: 20px;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("./image/hinhgs.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 50px 0 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+.show-password {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 20px; /* Khoảng cách dưới cho phần "Lưu tài khoản" */
+}
+
+/* Đặt phông chữ chung cho toàn bộ trang */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Bố cục của header */
+header {
+  background-color: #0b0e0b;
+  color: white;
+  padding: 40px 5%;
+  text-align: center;
+  border-radius: 15px; /* Bo tròn các góc của header */
+}
+
+.header-content h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 4vw;
+  margin-bottom: 20px;
+}
+
+.header-content span {
+  font-weight: 500;
+  font-size: 4.5vw;
+  color: #f0a500;
+  margin-bottom: 15px;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 2.5vw;
+  transition: color 0.3s ease;
+  padding: 10px 0;
+}
+
+nav ul li a:hover {
+  color: #f0a500;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  font-size: 2vw;
+  cursor: pointer;
+  border-radius: 15px; /* Bo tròn các góc của nút */
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+button:hover {
+  background-color: #e89a00;
+}
+
+/* Thiết lập cho phần thông báo cần đăng nhập */
+#message {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 30px;
+  border-radius: 15px; /* Bo tròn các góc của hộp thông báo */
+  text-align: center;
+  width: 80%;
+}
+
+.message-box {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 15px; /* Bo tròn các góc của message box */
+}
+
+.message-box p {
+  font-size: 3vw;
+  margin-bottom: 20px;
+}
+
+#ok-btn {
+  padding: 10px 20px;
+  background-color: #f0a500;
+  border: none;
+  font-size: 2vw;
+  cursor: pointer;
+  border-radius: 15px; /* Bo tròn các góc của nút OK */
+}
+
+#ok-btn:hover {
+  background-color: #e89a00;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive Design cho các thiết bị nhỏ hơn */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 6vw;
+    margin-bottom: 25px;
+  }
+
+  .header-content span {
+    font-size: 6vw;
+    margin-bottom: 20px;
+  }
+
+  nav ul li a {
+    font-size: 4vw;
+    padding: 12px 0;
+  }
+
+  button {
+    font-size: 4vw;
+    padding: 12px 25px;
+    margin-top: 35px;
+    border-radius: 20px; /* Tăng độ bo tròn của nút trên màn hình nhỏ */
+  }
+
+  .message-box p {
+    font-size: 4.5vw;
+    margin-bottom: 25px;
+  }
+
+  #ok-btn {
+    font-size: 3.5vw;
+    border-radius: 20px; /* Tăng độ bo tròn của nút OK */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 8vw;
+    margin-bottom: 30px;
+  }
+
+  .header-content span {
+    font-size: 8vw;
+    margin-bottom: 25px;
+  }
+
+  nav ul li a {
+    font-size: 5vw;
+    padding: 15px 0;
+  }
+
+  button {
+    font-size: 5vw;
+    padding: 15px 30px;
+    margin-top: 40px;
+    border-radius: 25px; /* Tăng độ bo tròn của nút trên màn hình rất nhỏ */
+  }
+
+  .message-box p {
+    font-size: 5vw;
+    margin-bottom: 30px;
+  }
+
+  #ok-btn {
+    font-size: 4vw;
+    border-radius: 25px; /* Tăng độ bo tròn của nút OK */
+  }
+}
+/* General Styling */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #0f0e0e;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+  background-color: #4caf50;
+  color: #120909;
+  padding: 40px 0; /* Increased padding to create space at the top */
+  text-align: center;
+  margin-bottom: 40px; /* Space below the header */
+}
+
+header h1 {
+  font-family: "Georgia", serif;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+/* Main Content Styling */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px; /* Increased padding for more space around content */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px; /* Space below the main content */
+}
+
+main p {
+  font-size: 1.2em;
+  color: #120303;
+  margin-bottom: 20px; /* Added margin for spacing between paragraphs */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px; /* Space below the list */
+}
+
+ul li {
+  font-size: 1.1em;
+  margin-bottom: 15px; /* Added margin between list items */
+}
+
+ul li strong {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Footer Styling */
+footer {
+  margin-top: auto; /* Pushes footer to the bottom */
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px; /* Space above the footer */
+}
+
+footer a {
+  font-size: 1.5em;
+  color: #f8f8f8;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #4caf50; /* Green background */
+  border-radius: 20px; /* Bo tròn góc */
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu nền */
+  border: none; /* Bỏ viền trắng */
+}
+
+footer a:hover {
+  background-color: #45a049; /* Màu nền khi hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  main {
+    padding: 25px 15px; /* Adjust padding on smaller screens */
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  footer a {
+    font-size: 1.2em;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+.tutor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.tutor-item {
+  background-color: rgb(161, 230, 149);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.tutor-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tutor-info {
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f8fb;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  text-align: center;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Tutor List Layout */
+main {
+  flex-grow: 1;
+}
+
+.tutor-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/* Individual Tutor Item */
+.tutor-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.tutor-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.tutor-item .image-wrapper {
+  width: 120px;
+  height: 120px;
+  background-color: #ffde59;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  padding: 5px;
+}
+
+.tutor-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+}
+
+/* Tutor Info Styling */
+.tutor-info {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 10px;
+}
+
+.tutor-info strong {
+  color: #007bff;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Extra Note */
+main p {
+  text-align: center;
+  padding: 20px;
+  font-size: 1em;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ffde59;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tutor-list {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  main p {
+    font-size: 0.95em;
+  }
+}

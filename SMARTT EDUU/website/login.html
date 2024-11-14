@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Register Form | Kiencode</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom styles to fix layout issue */
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .show-password {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+
+      .show-password label,
+      .remember-forgot label {
+        margin-right: 10px;
+      }
+
+      .toggle-link {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="form-container">
+        <!-- Login Form -->
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <h1>Login</h1>
+          <div class="input-box">
+            <input
+              type="text"
+              id="loginUsername"
+              placeholder="Username"
+              required
+            />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+
+          <!-- Show Password Checkbox -->
+          <div class="show-password">
+            <label>
+              <input
+                type="checkbox"
+                id="showPasswordLogin"
+                onclick="togglePassword('loginPassword', 'showPasswordLogin')"
+              />
+              Show Password
+            </label>
+          </div>
+
+          <!-- Remember Me & Forgot Password -->
+          <div class="remember-forgot">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#" onclick="forgotPassword()">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+          <div class="toggle-link">
+            <p>
+              Don't have an account?
+              <a href="#" onclick="showRegister()">Register</a>
+            </p>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form
+          id="registerForm"
+          style="display: none"
+          onsubmit="handleRegister(event)"
+        >
+          <h1>Register</h1>
+          <div class="input-box">
+            <input
+              type="text"
+              id="registerUsername"
+              placeholder="Username"
+              required
+            />
+            <i class="bx bxs-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              id="registerEmail"
+              placeholder="Email"
+              required
+            />
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Password"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+
+          <!-- Show Password Checkbox -->
+          <div class="show-password">
+            <label>
+              <input
+                type="checkbox"
+                id="showPasswordRegister"
+                onclick="togglePassword('registerPassword', 'showPasswordRegister')"
+              />
+              Show Password
+            </label>
+          </div>
+
+          <button type="submit" class="btn">Register</button>
+          <div class="toggle-link">
+            <p>
+              Already have an account?
+              <a href="#" onclick="showLogin()">Login</a>
+            </p>
+          </div>
+        </form>
+
+        <!-- Forgot Password -->
+        <div id="forgotPasswordForm" style="display: none">
+          <h2>Forgot Password</h2>
+          <p>Enter your email address to reset your password.</p>
+          <div class="input-box">
+            <input type="email" id="forgotEmail" placeholder="Email" required />
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <button onclick="handleForgotPassword()" class="btn">
+            Reset Password
+          </button>
+          <div class="toggle-link">
+            <p>
+              Remember your password?
+              <a href="#" onclick="showLogin()">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function togglePassword(inputId, checkboxId) {
+        const passwordInput = document.getElementById(inputId);
+        const showPasswordCheckbox = document.getElementById(checkboxId);
+
+        // Toggle password visibility
+        if (showPasswordCheckbox.checked) {
+          passwordInput.type = "text";
+        } else {
+          passwordInput.type = "password";
+        }
+      }
+
+      function showRegister() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("registerForm").style.display = "block";
+        document.getElementById("forgotPasswordForm").style.display = "none";
+      }
+
+      function showLogin() {
+        document.getElementById("registerForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+        document.getElementById("forgotPasswordForm").style.display = "none";
+      }
+
+      function handleLogin(event) {
+        event.preventDefault();
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+
+        if (
+          username === localStorage.getItem("username") &&
+          password === localStorage.getItem("password")
+        ) {
+          localStorage.setItem("isAuthenticated", "true");
+          alert(`Welcome, ${username}!`);
+        } else {
+          alert("Invalid username or password");
+        }
+      }
+
+      function handleRegister(event) {
+        event.preventDefault();
+        const username = document.getElementById("registerUsername").value;
+        const email = document.getElementById("registerEmail").value;
+        const password = document.getElementById("registerPassword").value;
+
+        localStorage.setItem("username", username);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+        alert("Registration successful! Please log in.");
+        showLogin();
+      }
+
+      function handleForgotPassword() {
+        const email = document.getElementById("forgotEmail").value;
+
+        // Simple demo action for forgot password
+        if (email === localStorage.getItem("email")) {
+          alert("A password reset link has been sent to your email.");
+        } else {
+          alert("Email not found.");
+        }
+      }
+
+      window.onload = function () {
+        if (localStorage.getItem("isAuthenticated") === "true") {
+          const username = localStorage.getItem("username");
+          alert(`Welcome back, ${username}!`);
+        }
+      };
+
+      function forgotPassword() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("forgotPasswordForm").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

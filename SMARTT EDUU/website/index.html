@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thuê Gia Sư</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Thiết lập phong cách tổng thể */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      /* Header và thanh điều hướng */
+      header {
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        color: white;
+        padding: 40px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .header-content h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+      .header-content span {
+        color: #ffde59;
+        font-weight: bold;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 20px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s;
+      }
+      nav ul li a:hover {
+        background-color: #ffde59;
+        color: #333;
+        transform: scale(1.05);
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        color: white;
+        padding: 80px 20px;
+        background: linear-gradient(
+            to right,
+            rgba(0, 123, 255, 0.8),
+            rgba(0, 198, 255, 0.8)
+          ),
+          url("banner.jpg") center/cover;
+        position: relative;
+        border-radius: 15px;
+        margin: 20px;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
+      }
+      .hero h2 {
+        font-size: 2.8em;
+        margin-bottom: 20px;
+      }
+      .hero p {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero button {
+        background-color: #ffde59;
+        color: #333;
+        border: none;
+        padding: 15px 35px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+      .hero button:hover {
+        background-color: #ffbc00;
+        transform: scale(1.1);
+      }
+
+      /* Features Section */
+      .features {
+        display: flex;
+        justify-content: space-around;
+        padding: 50px 20px;
+        background-color: #fff;
+        margin: 20px auto;
+        max-width: 1000px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      .feature-item {
+        text-align: center;
+        padding: 30px;
+        width: 250px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .feature-item:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Hình ảnh tròn với hiệu ứng hover */
+      .feature-item img {
+        width: 120px; /* Đặt kích thước hình ảnh bằng nhau */
+        height: 120px; /* Đảm bảo tỷ lệ bằng nhau */
+        border-radius: 50%; /* Tạo hình tròn */
+        margin-bottom: 20px;
+        object-fit: cover; /* Giữ tỉ lệ hình ảnh không bị méo */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature-item img:hover {
+        transform: scale(1.1); /* Tăng kích thước khi hover */
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Thêm hiệu ứng bóng */
+      }
+
+      .feature-item h3 {
+        color: #007bff;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+      .feature-item p {
+        font-size: 1.1em;
+        color: #555;
+      }
+
+      /* Why Choose Us Section */
+      .why-choose-us {
+        background-color: #e9f5ff;
+        padding: 50px 20px;
+        text-align: center;
+        margin: 20px auto;
+        max-width: 800px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      .why-choose-us h2 {
+        color: #007bff;
+        font-size: 2.2em;
+        margin-bottom: 25px;
+      }
+      .why-choose-us p {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 15px;
+        line-height: 1.8;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 25px;
+        background-color: #007bff;
+        color: white;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>Chào mừng đến với dịch vụ <span>Thuê Gia Sư</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="infor.html">Thông tin gia sư</a></li>
+          <li><a href="courses.html">Khóa học</a></li>
+          <li><a href="tutors.html">Danh sách gia sư</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Chào mừng bạn đến với dịch vụ Thuê Gia Sư chuyên nghiệp</h2>
+      <p>
+        Đội ngũ gia sư của chúng tôi sẵn sàng hỗ trợ bạn trên hành trình học
+        tập. Hãy khám phá các khóa học và lựa chọn gia sư phù hợp ngay hôm nay!
+      </p>
+      <a href="login.html">
+        <button>Đăng ký ngay</button>
+      </a>
+    </section>
+
+    <section class="features">
+      <div class="feature-item">
+        <img src="./image/cuong.jpg" alt="Chất lượng" />
+        <h3>Gia sư chất lượng cao</h3>
+        <p>Đội ngũ gia sư giàu kinh nghiệm và tận tâm với nghề.</p>
+      </div>
+      <div class="feature-item">
+        <img src="./image/monhoc.jpg" alt="Đa dạng môn học" />
+        <h3>Đa dạng môn học</h3>
+        <p>Từ toán học, văn học đến các môn khoa học tự nhiên.</p>
+      </div>
+      <div class="feature-item">
+        <img src="./image/hoc" alt="Tiện lợi" />
+        <h3>Học mọi lúc, mọi nơi</h3>
+        <p>Dịch vụ gia sư trực tuyến tiện lợi và linh hoạt.</p>
+      </div>
+    </section>
+
+    <section class="why-choose-us">
+      <h2>Tại sao chọn chúng tôi?</h2>
+      <p>Đội ngũ gia sư có kinh nghiệm và chuyên môn cao.</p>
+      <p>Đa dạng môn học và các cấp độ từ tiểu học đến đại học.</p>
+      <p>Thời gian học linh hoạt, đáp ứng nhu cầu của bạn.</p>
+      <p>Hỗ trợ học tập hiệu quả và cải thiện điểm số rõ rệt.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Thuê Gia Sư. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
